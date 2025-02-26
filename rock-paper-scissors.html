@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 34px;
+            color: white;
+            background-color: rgb(24, 23, 23);
+        }
+        .button {
+            font-size: 45px;
+            background-color: transparent;
+            border-radius: 100%;
+            border: solid white 0.5px;
+            width: 125px;
+            height: 125px;
+            margin-top: 35px;
+            margin-left: 15px;
+
+        }
+
+        .del-b {
+            color: white;
+            font-size: 25px;
+            border-radius: 100%;
+            width: 125px;
+            height: 125px;
+            margin-top: 35px;
+            margin-left: 15px;
+            background-color: transparent;
+            border: solid white 0.5px;
+
+        }
+        
+        .del-b:hover {
+            border: solid red 3px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            border: solid white 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissorsr Game</h1>
+
+    <button class="button" onClick="playGame('✊');">✊</button>
+    <button class="button" onClick="playGame('✋');">✋</button>
+    <button class="button" onClick="playGame('✌️');">✌️</button>
+    <button class="del-b" title="Are you sure, to reset the score" onClick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        
+        localStorage.removeItem('score');
+    ">Reset Score</button>
+    
+    <div>
+        <p id="para-text"></p>
+    </div>
+    <div>
+        <h2>Score</h2>
+        <div id="wins"></div>
+        <div id="losses"></div>
+        <div id="ties"></div>
+    </div>
+    <script src="rock-paper-scissors"></script>
+</body>
+</html>
