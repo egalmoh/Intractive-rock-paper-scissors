@@ -59,6 +59,16 @@ document.querySelector('.reset')
         localStorage.removeItem('score');
     });
 
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playGame('✊');
+    } else if (event.key === 'p') {
+        playGame('✋');
+    } else if (event.key === 's') {
+        playGame('✌️');
+    }
+});
+
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
     const p_text = document.getElementById('para-text');
