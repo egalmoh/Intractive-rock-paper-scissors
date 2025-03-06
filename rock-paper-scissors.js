@@ -19,12 +19,14 @@ let intervalId;
 
 function autoPlay(){
     if (!isAutoPlaying) {
+        document.querySelector('.text').innerHTML = 'Stop Playing';
         intervalId = setInterval(function() {
             const playerMove = pickComputerMove();
             playGame(playerMove)
         }, 1000)    
         isAutoPlaying = true;
     } else {
+        document.querySelector('.text').innerHTML = 'Auto Play';
         clearInterval(intervalId);
         isAutoPlaying = false;
     }
@@ -52,11 +54,7 @@ document.querySelector('#auto')
 
 document.querySelector('.reset')
     .addEventListener('click', () => {
-        score.wins = 0;
-        score.losses = 0;
-        score.ties = 0;
-        
-        localStorage.removeItem('score');
+        checkDelete()
     });
 
 document.body.addEventListener('keydown', (event) => {
@@ -66,8 +64,32 @@ document.body.addEventListener('keydown', (event) => {
         playGame('✋');
     } else if (event.key === 's') {
         playGame('✌️');
+    } else if (event.key === 'a') {
+        autoPlay();
+    } else if (event.key === 'Backspace') {
+        checkDelete()
     }
 });
+
+function checkDelete() {
+    document.querySelector('#info').innerHTML = `
+        Are you sure, you want to reset the score?
+        <button class="yes">Yes</button>
+        <button class="no">No</button> 
+    `
+    document.querySelector('.yes').addEventListener('click', ()=>{
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        
+        localStorage.removeItem('score');
+        document.querySelector('#info').innerHTML = '';
+    });
+
+    document.querySelector('.no').addEventListener('click', ()=>{
+        document.querySelector('#info').innerHTML = '';
+    })
+}
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();

@@ -60,11 +60,50 @@
         .info {
             font-size: 20px;
         }
+
+        .yes {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 25%;
+            width: 55px;
+            height: 45px;
+            margin-top: 35px;
+            margin-left: 5px;
+            background-color: transparent;
+            border: solid white 0.5px;
+        }
+
+        .no {
+            color: white;
+            font-size: 15px;
+            border-radius: 25%;
+            font-weight: bold;
+            width: 55px;
+            height: 45px;
+            margin-top: 35px;
+            margin-left: 5px;
+            background-color: transparent;
+            border: solid white 0.5px;
+        }
+
+        .yes:hover {
+            background-color: red;
+            cursor: pointer;
+            border: solid rgb(230, 16, 16) 0.5px;
+        }
+
+        .no:hover {
+            background-color: green;
+            cursor: pointer;
+            border: solid green 0.5px;
+        }
     </style>
 </head>
 <body>
     <h1>Rock Paper Scissorsr Game</h1>
     <p class="info">Click 'R' to play rock. Click 'P' to play paper. Click 'S' to play scissors.</p>
+    <p class="info">Click 'A' to let AI play for you.</p>
 
     <button class="button js-rock-bt">✊</button>
     <button class="button js-paper-bt">✋</button>
@@ -79,8 +118,11 @@
         <div id="losses"></div>
         <div id="ties"></div>
     </div>
-    <button class="del-b reset" title="Are you sure, to reset the score">Reset Score</button>
-    <button class="del-b" id="auto">Auto Play</button>
+    <button class="del-b reset">Reset Score</button>
+    <button class="del-b text" id="auto">Auto Play</button>
+    <div id="info">
+
+    </div>
     <footer>
         <div>
             <p class="name">Mohamed Egal ©️ 2025</p>
