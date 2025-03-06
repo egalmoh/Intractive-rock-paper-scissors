@@ -43,7 +43,21 @@ document.querySelector('.js-paper-bt')
 document.querySelector('.js-scissors-bt')
     .addEventListener('click', () => {
         playGame('✌️');
-    })
+    });
+
+document.querySelector('#auto')
+    .addEventListener('click', () => {
+        autoPlay();
+    });
+
+document.querySelector('.reset')
+    .addEventListener('click', () => {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        
+        localStorage.removeItem('score');
+    });
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();

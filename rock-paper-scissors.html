@@ -74,16 +74,8 @@
         <div id="losses"></div>
         <div id="ties"></div>
     </div>
-    <button class="del-b" title="Are you sure, to reset the score" onClick="
-        score.wins = 0;
-        score.losses = 0;
-        score.ties = 0;
-        
-        localStorage.removeItem('score');
-    ">Reset Score</button>
-    <button class="del-b" id="auto" onclick="
-        autoPlay();
-    ">Auto Play</button>
+    <button class="del-b reset" title="Are you sure, to reset the score">Reset Score</button>
+    <button class="del-b" id="auto">Auto Play</button>
     <footer>
         <div>
             <p class="name">Mohamed Egal ©️ 2025</p>
