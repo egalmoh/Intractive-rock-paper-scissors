@@ -36,24 +36,34 @@
             border: solid white 0.5px;
 
         }
+        #auto:hover {
+            border: solid green 3px;
+        }
         
         .del-b:hover {
             border: solid red 3px;
             cursor: pointer;
         }
 
+
         .button:hover {
             border: solid white 3px;
             cursor: pointer;
+        }
+
+        .name {
+            font-size: 15px;
+            color: white;
+            margin-top: 280px
         }
     </style>
 </head>
 <body>
     <h1>Rock Paper Scissorsr Game</h1>
 
-    <button class="button" onClick="playGame('✊');">✊</button>
-    <button class="button" onClick="playGame('✋');">✋</button>
-    <button class="button" onClick="playGame('✌️');">✌️</button>
+    <button class="button js-rock-bt">✊</button>
+    <button class="button js-paper-bt">✋</button>
+    <button class="button js-scissors-bt">✌️</button>
     
     <div>
         <p id="para-text"></p>
@@ -65,15 +75,20 @@
         <div id="ties"></div>
     </div>
     <button class="del-b" title="Are you sure, to reset the score" onClick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    
-    localStorage.removeItem('score');
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        
+        localStorage.removeItem('score');
     ">Reset Score</button>
-    <button class="del-b" onclick="
+    <button class="del-b" id="auto" onclick="
         autoPlay();
     ">Auto Play</button>
+    <footer>
+        <div>
+            <p class="name">Mohamed Egal ©️ 2025</p>
+        </div>
+    </footer>
     <script src="rock-paper-scissors.js"></script>
 </body>
 </html>

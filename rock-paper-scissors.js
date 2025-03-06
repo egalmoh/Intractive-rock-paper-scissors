@@ -14,7 +14,8 @@ if (!score) {
 }
 */
 
-
+let isAutoPlaying = false;
+let intervalId;
 
 function autoPlay(){
     if (!isAutoPlaying) {
@@ -28,6 +29,21 @@ function autoPlay(){
         isAutoPlaying = false;
     }
 }
+
+document.querySelector('.js-rock-bt')
+    .addEventListener('click', () => {
+        playGame('✊');
+    });
+
+document.querySelector('.js-paper-bt')
+    .addEventListener('click', () => {
+        playGame('✋');
+    });
+
+document.querySelector('.js-scissors-bt')
+    .addEventListener('click', () => {
+        playGame('✌️');
+    })
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
