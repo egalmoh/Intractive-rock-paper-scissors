@@ -14,8 +14,7 @@ if (!score) {
 }
 */
 
-let isAutoPlaying = false;
-let intervalId;
+
 
 function autoPlay(){
     if (!isAutoPlaying) {
